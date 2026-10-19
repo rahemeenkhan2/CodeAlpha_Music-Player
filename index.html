@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -236,4 +237,244 @@
 
 <script src="music.js"></script>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Melody - Music Player</title>
+    <link rel="stylesheet" href="music.css">
+</head>
+<body>
+
+<div class="app">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <a href="#" class="brand">
+            <img src="images/logo.png" alt="Melody logo"
+                 onerror="this.style.display='none'">
+            <span>melody<span class="brand-dot">.</span></span>
+        </a>
+
+        <p class="sidebar-label">MENU</p>
+
+        <nav class="nav-menu">
+            <a href="#home" class="nav-item active">
+                <span>⌂</span> Home
+            </a>
+            <a href="#songList" class="nav-item">
+                <span>⌕</span> Discover
+            </a>
+            <a href="#songList" class="nav-item">
+                <span>♫</span> Your Library
+            </a>
+        </nav>
+
+        <p class="sidebar-label playlist-label">YOUR PLAYLIST</p>
+
+        <div class="playlist-links">
+            <a href="#songList">♡ Chill Vibes</a>
+            <a href="#songList">♫ My Favorites</a>
+            <a href="#songList">✦ Daily Mix</a>
+        </div>
+
+        <div class="sidebar-bottom">
+            <div class="mini-note">♫</div>
+            <p>Your music, your mood.</p>
+            <small>Make every moment musical.</small>
+        </div>
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="main-content" id="home">
+
+        <header class="topbar">
+            <div>
+                <p class="greeting">YOUR PERSONAL MUSIC SPACE</p>
+                <h1>Good music, <span>good mood.</span></h1>
+            </div>
+
+            <div class="topbar-badge">
+                <span class="live-dot"></span> Music player
+            </div>
+        </header>
+
+
+        <!-- Featured Playlist -->
+        <section class="featured">
+
+            <div class="featured-text">
+                <span class="eyebrow">✦ FEATURED PLAYLIST</span>
+
+                <h2>Chill<br>Vibes.</h2>
+
+                <p>Your favorite songs, all in one place.<br>
+                   Put your headphones on and relax.</p>
+
+                <button class="primary-btn" id="featuredPlay">
+                    <span id="featuredPlayIcon">▶</span>
+                    <span id="featuredPlayText">Play Music</span>
+                </button>
+            </div>
+
+            <div class="featured-art">
+                <div class="art-orbit orbit-one"></div>
+                <div class="art-orbit orbit-two"></div>
+                <div class="art-disc">
+                    <div class="disc-center">♫</div>
+                </div>
+                <span class="floating-note note-one">♪</span>
+                <span class="floating-note note-two">♫</span>
+            </div>
+
+        </section>
+
+
+        <!-- Song List -->
+        <section class="songs-section">
+
+            <div class="section-title">
+                <div>
+                    <p class="section-kicker">YOUR COLLECTION</p>
+                    <h2>Recently played</h2>
+                </div>
+
+                <span class="song-count" id="songCount">0 songs</span>
+            </div>
+
+            <div class="song-table-header">
+                <span>#</span>
+                <span>TRACK</span>
+                <span class="album-heading">ALBUM</span>
+                <span class="duration-heading">TIME</span>
+                <span></span>
+            </div>
+
+            <div class="songs" id="songList">
+                <!-- Songs are added by JavaScript -->
+            </div>
+
+            <p class="empty-message" id="emptyMessage" hidden>
+                No songs available.
+            </p>
+
+        </section>
+
+        <footer class="main-footer">
+            <span>Made for your listening moments ♡</span>
+            <span>MELODY PLAYER</span>
+        </footer>
+
+    </main>
+
+
+    <!-- Now Playing Panel -->
+    <aside class="right-panel">
+
+        <div class="now-playing-heading">
+            <h3>Now Playing</h3>
+            <span class="equalizer">♫</span>
+        </div>
+
+        <div class="cover-frame">
+            <img id="cover" src="images/ed.jpg" alt="Album cover">
+            <div class="cover-overlay">♫</div>
+        </div>
+
+        <div class="track-details">
+            <div>
+                <h2 id="title">Choose a song</h2>
+                <p id="artist">Your music awaits</p>
+            </div>
+            <button class="heart-btn" id="favoriteBtn"
+                    aria-label="Favorite song" aria-pressed="false">♡</button>
+        </div>
+
+        <div class="playing-status">
+            <span class="live-dot"></span>
+            <span id="playingStatus">READY TO PLAY</span>
+        </div>
+
+        <div class="up-next">
+            <div class="up-next-heading">
+                <h4>Up Next</h4>
+                <span>Playlist</span>
+            </div>
+
+            <div id="upNextList"></div>
+        </div>
+
+        <div class="panel-message">
+            <span>♫</span>
+            <p>Let the music<br>take you away.</p>
+        </div>
+
+    </aside>
+
+</div>
+
+
+<!-- Fixed Bottom Player -->
+<footer class="player">
+
+    <div class="player-song">
+        <img id="bottomCover" src="images/ed.jpg" alt="">
+        <div class="bottom-track-details">
+            <strong id="bottomTitle">Choose a song</strong>
+            <span id="bottomArtist">Melody playlist</span>
+        </div>
+        <button class="bottom-heart" id="bottomFavorite"
+                aria-label="Favorite song">♡</button>
+    </div>
+
+
+    <div class="player-center">
+
+        <div class="player-controls">
+            <button id="shuffleBtn" class="small-control"
+                    title="Shuffle" aria-label="Shuffle">⤨</button>
+
+            <button id="prevBtn" title="Previous"
+                    aria-label="Previous song">|◀</button>
+
+            <button id="playBtn" class="play-btn"
+                    title="Play or pause" aria-label="Play">▶</button>
+
+            <button id="nextBtn" title="Next"
+                    aria-label="Next song">▶|</button>
+
+            <button id="repeatBtn" class="small-control"
+                    title="Repeat" aria-label="Repeat">↻</button>
+        </div>
+
+        <div class="progress-row">
+            <span id="currentTime">0:00</span>
+            <input type="range" id="progress"
+                   min="0" max="100" value="0"
+                   aria-label="Song progress">
+            <span id="duration">0:00</span>
+        </div>
+
+    </div>
+
+
+    <div class="player-volume">
+        <span>♫</span>
+        <input type="range" id="volume"
+               min="0" max="1" step="0.01" value="0.7"
+               aria-label="Volume">
+    </div>
+
+</footer>
+
+
+<audio id="audio" preload="metadata"></audio>
+
+<script src="music.js"></script>
+</body>
+>>>>>>> a7f28ba8ad143cfaacfe94c1dd1236f447fb5c99
 </html>
